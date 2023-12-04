@@ -35,7 +35,7 @@
             </ul>
           </div>
           <div class="header_top_right">
-            <p>Friday, December 05, 2045</p>
+            <p>{% now "jS F Y H:i" %}</p>
           </div>
         </div>
       </div>
@@ -55,20 +55,12 @@
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav main_nav">
           <li class="active"><a href="{% url 'home_page' %}"><span class="fa fa-home desktop-home"></span><span class="mobile-show">Home</span></a></li>
-          <li><a href="#">Technology</a></li>
-          <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Mobile</a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="#">Android</a></li>
-              <li><a href="#">Samsung</a></li>
-              <li><a href="#">Nokia</a></li>
-              <li><a href="#">Walton Mobile</a></li>
-              <li><a href="#">Sympony</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Laptops</a></li>
-          <li><a href="#">Tablets</a></li>
-          <li><a href="{% url 'contact-page' %}">Contact Us</a></li>
-          <li><a href="{% url '404-page' %}">404 Page</a></li>
+              <li><a href="{% url 'techno_news_page' %}">Texnologiya</a></li>
+              <li><a href="{% url 'local_news_page' %}">Mahalliy</a></li>
+              <li><a href="{% url 'sport_news_page' %}">Sport</a></li>
+              <li><a href="{% url 'foreign_news_page' %}">Xorijiy</a></li>
+              <li><a href="{% url 'contact-page' %}">Contact Us</a></li>
+              <li><a href="{% url '404-page' %}">404 Page</a></li>
         </ul>
       </div>
     </nav>
@@ -114,16 +106,11 @@
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4">
           <div class="footer_widget wow fadeInDown">
-            <h2>Tag</h2>
+            <h2>Taglar</h2>
             <ul class="tag_nav">
-              <li><a href="#">Games</a></li>
-              <li><a href="#">Sports</a></li>
-              <li><a href="#">Fashion</a></li>
-              <li><a href="#">Business</a></li>
-              <li><a href="#">Life &amp; Style</a></li>
-              <li><a href="#">Technology</a></li>
-              <li><a href="#">Photo</a></li>
-              <li><a href="#">Slider</a></li>
+              {% for cat in categories %}
+              <li><a href="#">{{ cat.name }}</a></li>
+              {% endfor %}
             </ul>
           </div>
         </div>
