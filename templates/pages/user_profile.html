@@ -1,0 +1,14 @@
+{% extends 'news/base.html' %}
+{% load static %}
+
+{% block title %} Foydalanuvchi profili {% endblock title %}
+{% block content %}
+  <h3>Xush kelibsiz, {{ user.username }}</h3>
+  <h2>Siz haqqingizda malumot</h2>
+  <label>Username</label><input value="{{ user.username }}" readonly><br>
+  <label>Email</label><input value="{{ user.email }}" readonly><br>
+  <label>Firstname</label><input value="{{ user.firstname }}" readonly><br>
+  <label>Lastname</label><input value="{{ user.lastname }}" readonly><br>
+
+  <h4><a href="#">Parolni almashtirish</a></h4>
+{% endblock content %}
