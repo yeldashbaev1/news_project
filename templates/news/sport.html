@@ -4,6 +4,69 @@
 {% block title %} Sport News {% endblock title%}
 
 {% block content %}
+<div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-3">
+    {% for news in sport %}
+        {% if forloop.counter < 5 %}
+      <div class="card" style="width: 24rem;">
+      <a href="{{ news.get_absolute_url }}"> <img class="card-img-top img-thumbnail"  src="{{ news.image.url }}" alt="news">
+        <div class="card-body">
+          <h5 class="card-title">{{ news.title }}</h5>
+          <p class="card-text">{{ news.body | truncatewords:5}}</p>
+        </div>
+      </a>
+      </div>
+      {% endif %}
+    {% endfor %}
+    </div>
 
+    <div class="col-lg-3 col-md-3 col-sm-3">
+    {% for news in sport %}
+        {% if forloop.counter < 5 %}
+      <div class="card" style="width: 24rem;">
+      <a href="{{ news.get_absolute_url }}"> <img class="card-img-top img-thumbnail"  src="{{ news.image.url }}" alt="news">
+        <div class="card-body">
+          <h5 class="card-title">{{ news.title }}</h5>
+          <p class="card-text">{{ news.body | truncatewords:5}}</p>
+        </div>
+      </a>
+      </div>
+      {% endif %}
+    {% endfor %}
+    </div>
 
+    <div class="col-lg-3 col-md-3 col-sm-3">
+    {% for news in sport %}
+        {% if forloop.counter < 5 %}
+      <div class="card" style="width: 24rem;">
+      <a href="{{ news.get_absolute_url }}"> <img class="card-img-top img-thumbnail"  src="{{ news.image.url }}" alt="news">
+        <div class="card-body">
+          <h5 class="card-title">{{ news.title }}</h5>
+          <p class="card-text">{{ news.body | truncatewords:5}}</p>
+        </div>
+      </a>
+      </div>
+      {% endif %}
+    {% endfor %}
+    </div>
+
+    <div class="col-lg-3 col-md-3 col-sm-3">
+        <div class="latest_post clearfix">
+          <h2><span>So'ngi yangiliklar</span></h2>
+          <div class="latest_post_container">
+            <div id="prev-button"><i class="fa fa-chevron-up"></i></div>
+            <ul class="latest_postnav">
+              {% for news in news_list %}
+              <li>
+                <div class="media"> <a href="{{ news.get_absolute_url }}" class="media-left"> <img alt="" src="{{ news.image.url }}"> </a>
+                  <div class="media-body"> <a href="{{ news.get_absolute_url }}" class="catg_title"> {{ news.title }}</a> </div>
+                </div>
+              </li>
+              {% endfor %}
+            </ul>
+            <div id="next-button"><i class="fa  fa-chevron-down"></i></div>
+          </div>
+        </div>
+    </div>
+  </div>
 {% endblock content%}

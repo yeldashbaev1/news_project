@@ -6,6 +6,7 @@ class PublishedManager(models.Manager):
     def get_queryset(self):
         return super().get_queryset().filter(status=News.Status.Published)
 class Category(models.Model):
+    objects = None
     name = models.CharField(max_length=150)
 
     def __str__(self):

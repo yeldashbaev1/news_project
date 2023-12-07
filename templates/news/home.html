@@ -19,7 +19,7 @@
         </div>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-4">
-        <div class="latest_post">
+        <div class="latest_post clearfix">
           <h2><span>So'ngi yangiliklar</span></h2>
           <div class="latest_post_container">
             <div id="prev-button"><i class="fa fa-chevron-up"></i></div>
@@ -49,9 +49,9 @@
                 {% for main in local_news %}
                   {% if forloop.first %}
                 <li>
-                  <figure class="bsbig_fig"> <a href="{{ main.get_absolute_url }}" class="featured_img"> <img alt="" src="{{ main.image.url }}"> <span class="overlay"></span> </a>
-                    <figcaption> <a href="{{ main.get_absolute_url }}">{{ main.title | truncatewords:5}}</a> </figcaption>
-                    <p>{{ main.title }}</p>
+                  <figure class="bsbig_fig"> <a href="{{ main.get_absolute_url }}" class="featured_img"> <img alt="" src="{{ main.image.url }}"> <span class="overlay"></span></a>
+                    <figcaption> <a href="{{ main.get_absolute_url }}">{{ main.title }}</a> </figcaption>
+                    <p>{{ main.body | truncatewords:10 }}</p>
                   </figure>
                 </li>
                   {% endif %}
