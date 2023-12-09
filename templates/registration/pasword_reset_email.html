@@ -1,0 +1,3 @@
+Sizning emailingiz parolni tiklash uchun kiritildi. Parol tiklash uchun quyidagu linkga kiring:
+{{ protocol }}://{{ domain }}{% url 'password_reset_confirm' uidb64=uid, token=token %}
+Sizning username: {{ user.get_username }}

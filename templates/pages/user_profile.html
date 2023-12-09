@@ -4,11 +4,15 @@
 {% block title %} Foydalanuvchi profili {% endblock title %}
 {% block content %}
   <h3>Xush kelibsiz, {{ user.username }}</h3>
+  <h3><a href="{% url 'logout' %}" class="text-danger">LogOut</a> </h3>
   <h2>Siz haqqingizda malumot</h2>
-  <label>Username</label><input value="{{ user.username }}" readonly><br>
-  <label>Email</label><input value="{{ user.email }}" readonly><br>
-  <label>Firstname</label><input value="{{ user.firstname }}" readonly><br>
-  <label>Lastname</label><input value="{{ user.lastname }}" readonly><br>
+  <img src="{{ profile.photo.url}}" width="30%">
+  <h4>Tugilgan yilingiz: {{ profile.date_of_birth }}</h4>
+  <label>Username</label><input value="{{ user.username }}" readonly placeholder="kiritilmagan"><br>
+  <label>Email</label><input value="{{ user.email }}" readonly placeholder="kiritilmagan"><br>
+  <label>Firstname</label><input value="{{ user.firstname }}" readonly placeholder="kiritilmagan"><br>
+  <label>Lastname</label><input value="{{ user.lastname }}" readonly placeholder="kiritilmagan"><br>
 
-  <h4><a href="#">Parolni almashtirish</a></h4>
+  <h4><a href="{% url 'password_change' %}" style="color: red">Parolni almashtirish</a></h4>
+  <h4><a href="{% url 'edit_user_info' %}" style="color: red">Profilni tahrirlash</a> </h4>
 {% endblock content %}

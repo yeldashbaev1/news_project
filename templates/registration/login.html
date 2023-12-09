@@ -4,11 +4,11 @@
 
 {% block content %}
 
-    <h2>Veb Saytga kirish uchun quyidagi formani toldiring!</h2>
-
-    <form method="post">{% csrf_token %}
+<h2>Veb Saytga kirish uchun quyidagi formani toldiring!</h2>
+<h5>Agar parolingizni unutgan bolsangiz uni qayta tiklang: <a href="{% url 'password_reset' %}" class="text-danger">Tiklang</a> </h5>
+  <form method="post">{% csrf_token %}
         {{ form.as_p }}
     <button type="submit">Login</button>
-    </form>
-
+  </form>
+  <h4>Agar foydalanuvchi profilingiz bolmasa <a href="{% url 'user_register' %}" style="color:red">royxatdan otishingiz</a>mumkin</h4>
 {% endblock content %}

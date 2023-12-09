@@ -9,10 +9,10 @@
     <h5>{{ news.publish_time }}</h5>
     <img src="{{ news.image.url }}">
     <p>{{ news.body }}</p>
-
+{% if request.user.is_authenticated and request.user.is_superuser %}
 <div class="card-footer text-center">
 <a href="{% url 'news-update' news.slug %}">Tahrirlash</a>
 <a href="{% url 'news-delete' news.slug %}">O'chirish</a>
-
+{% endif %}
 </div>
 {% endblock content %}
