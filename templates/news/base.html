@@ -32,6 +32,9 @@
               <li><a href="{% url 'home_page' %}">Home</a></li>
               <li><a href="#">About</a></li>
               <li><a href="{% url 'contact-page' %}">Contact</a></li>
+              {% if user.is_authenticated and user.is_superuser %}
+              <li><a href="{% url 'admin_page' %}">Admin Sahifasi</a> </li>
+              {% endif %}
             </ul>
           </div>
           <div class="header_top_right">
@@ -47,7 +50,7 @@
       </div>
       <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="header_bottom">
-          <div class="logo_area"><a href="index.html" class="logo"><img src="{% static 'images/logo.jpg' %}" alt=""></a></div>
+          <div class="logo_area"><a href="{% url 'home_page' %}" class="logo"><img src="{% static 'images/logo.jpg' %}" alt=""></a></div>
           <div class="add_banner"><a href="#"><img src="{% static 'images/addbanner_728x90_V1.jpg' %}" alt=""></a></div>
         </div>
       </div>
@@ -66,7 +69,11 @@
               <li><a href="{% url 'sport_news_page' %}">Sport</a></li>
               <li><a href="{% url 'foreign_news_page' %}">Xorijiy</a></li>
               <li><a href="{% url 'contact-page' %}">Contact Us</a></li>
-              <li><a href="{% url '404-page' %}">404 Page</a></li>
+              <li>
+                <form method="get" action="{% url 'search_result' %}">
+                  <input type="search" name="q" placeholder="Qidiruv" class="form-control">
+                </form>
+              </li>
         </ul>
       </div>
     </nav>

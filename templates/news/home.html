@@ -1,6 +1,6 @@
 {% extends 'news/base.html' %}
 {% load static %}
-
+{% load hitcount_tags %}
 {% block title %} Home Page {% endblock title %}
 
 {% block content %}
@@ -18,7 +18,7 @@
           {% endfor %}
         </div>
       </div>
-      <div class="col-lg-4 col-md-4 col-sm-4">
+      <div class="col-lg-4 col-md-4 col-sm-4 ">
         <div class="latest_post clearfix">
           <h2><span>So'ngi yangiliklar</span></h2>
           <div class="latest_post_container">
@@ -29,6 +29,7 @@
                 <div class="media"> <a href="{{ news.get_absolute_url }}" class="media-left"> <img alt="" src="{{ news.image.url }}"> </a>
                   <div class="media-body"> <a href="{{ news.get_absolute_url }}" class="catg_title"> {{ news.title }}</a> </div>
                 </div>
+                <i class="fa fa-eye" aria-hidden="true"></i> {% get_hit_count for news %}
               </li>
               {% endfor %}
             </ul>
@@ -52,6 +53,7 @@
                   <figure class="bsbig_fig"> <a href="{{ main.get_absolute_url }}" class="featured_img"> <img alt="" src="{{ main.image.url }}"> <span class="overlay"></span></a>
                     <figcaption> <a href="{{ main.get_absolute_url }}">{{ main.title }}</a> </figcaption>
                     <p>{{ main.body | truncatewords:10 }}</p>
+                    <i class="fa fa-eye" aria-hidden="true"></i> {% get_hit_count for main %}
                   </figure>
                 </li>
                   {% endif %}
@@ -66,6 +68,7 @@
                   <div class="media wow fadeInDown"> <a href="{{ mahalliy.get_absolute_url }}" class="media-left"> <img alt="" src="{{ mahalliy.image.url }}"> </a>
                     <div class="media-body"> <a href="{{ mahalliy.get_absolute_url }}" class="catg_title"> {{ mahalliy.title }} </a> </div>
                   </div>
+                  <i class="fa fa-eye" aria-hidden="true"></i> {% get_hit_count for mahalliy %}
                 </li>
                   {% endif %}
                 {% endfor %}
@@ -83,6 +86,7 @@
                     <figure class="bsbig_fig"> <a href="{{ news.get_absolute_url }}" class="featured_img"> <img alt="" src="{{ news.image.url }}"> <span class="overlay"></span> </a>
                       <figcaption> <a href="{{ news.get_absolute_url }}">{{ news.title }}</a> </figcaption>
                       <p>{{ news.body | truncatewords:10 }}</p>
+                      <i class="fa fa-eye" aria-hidden="true"></i> {% get_hit_count for news %}
                     </figure>
                   </li>
                     {% endif %}
@@ -95,6 +99,7 @@
                     <div class="media wow fadeInDown"> <a href="{{ news.get_absolute_url }}" class="media-left"> <img alt="" src="{{ news.image.url }}"> </a>
                       <div class="media-body"> <a href="{{ news.get_absolute_url }}" class="catg_title"> {{ news.title }} </a> </div>
                     </div>
+                    <i class="fa fa-eye" aria-hidden="true"></i> {% get_hit_count for news %}
                   </li>
                   {% endif %}
                 {% endfor %}
@@ -111,6 +116,7 @@
                     <figure class="bsbig_fig wow fadeInDown"> <a href="{{ news.get_absolute_url }}" class="featured_img"> <img alt="" src="{{ news.image.url }}"> <span class="overlay"></span> </a>
                       <figcaption> <a href="{{ news.get_absolute_url }}">{{ news.title }}</a> </figcaption>
                       <p>{{news.body | truncatewords:10 }}</p>
+                      <i class="fa fa-eye" aria-hidden="true"></i> {% get_hit_count for news %}
                     </figure>
                   </li>
                     {% endif %}
@@ -123,6 +129,7 @@
                     <div class="media wow fadeInDown"> <a href="{{ news.get_absolute_url }}" class="media-left"> <img alt="" src="{{ news.image.url }}"> </a>
                       <div class="media-body"> <a href="{{ news.get_absolute_url }}" class="catg_title"> {{ news.title }} </a> </div>
                     </div>
+                    <i class="fa fa-eye" aria-hidden="true"></i> {% get_hit_count for news %}
                   </li>
                     {% endif %}
                   {% endfor %}
@@ -175,6 +182,7 @@
                   <figure class="bsbig_fig  wow fadeInDown"> <a class="featured_img" href="{{ news.get_absolute_url }}"> <img src="{% static 'images/featured_img1.jpg' %}" alt=""> <span class="overlay"></span> </a>
                     <figcaption> <a href="{{ news.get_absolute_url }}">{{ news.title }}</a> </figcaption>
                     <p>{{ news.body | truncatewords:10 }}</p>
+                    <i class="fa fa-eye" aria-hidden="true"></i> {% get_hit_count for news %}
                   </figure>
                 </li>
                   {% endif %}
@@ -189,6 +197,7 @@
                   <div class="media wow fadeInDown"> <a href="{{ news.get_absolute_url }}" class="media-left"> <img alt="" src="{{ news.image.url }}"> </a>
                     <div class="media-body"> <a href="{{ news.get_absolute_url }}" class="catg_title"> {{ news.title }} </a> </div>
                   </div>
+                  <i class="fa fa-eye" aria-hidden="true"></i> {% get_hit_count for news %}
                 </li>
                   {% endif %}
                 {% endfor %}
